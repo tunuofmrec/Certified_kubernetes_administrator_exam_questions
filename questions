@@ -1,0 +1,35 @@
+Certitified Kubernetes Admistrator exam questions:
+Things to keep in mind
+•	There were total 24 questions in this exam divided in 6 different clusters. At the beginging of each question there was a command provided to switch to the appropriate cluster so always remember to run the command first.
+•	Ctrl-C and Ctrl-P does not work instead ctrl-insert (copy) and ctrl-shift-insert (paste).
+•	Only Kubernetes official documentation is allowed from internet, no other document or website will be available during the exam.
+•	Each question will be of different weightage (like 2%, 3%, 4%, 8%). Maximum I got was of 8%
+•	Questions were appeared from almost all the topics of Keubernetes.
+•	Practice more with creating objects using the commands. Kubectl commands options like create, run, exec, get, rollout, top etc. Get familiarity with all the arguments can be passed along with these commands
+•	Pay more attention to the objects name given in the question and use the same.
+•	You can utilize any YAML file created for previous scenarios, copy them and then change the names and labels inside, that will save some time
+
+Some of the questions I received in my exam as best of my memory are listed below:
+1)	Create an ETCD clusted backup and save it in the given file, path for CA cert, ETCD cert/key was also provided seperately in the question and hence supposed to use the given path and not the conventional path. (8%)
+2)	Create 2 nodes (master and one worker node) cluster using kubeadm. You can use any networking plugin. Question will be considered completed when both the nodes are in ready state. (7%)
+3)	Create a nodeport service on the given ports and make sure POD endpoints are visible
+4)	Create a clusterIP service 
+5)	Create a mysql pod and cluster IP service associated with that, access the pod and service from with in cluster and redirect the output of ‘nslookup’ command into the given files seperately.
+6)	Create a static POD on worker node and make sure POD is running. In this question kubelet configuration had missing manifest directory path (/etc/kubernetes/manifest) so had to add that and restarted the kubelet service made the POD running. (5%)
+7)	Create a POD with NGINX and REDIS images in the same container. This is multi image container and were asked to have 2-4 images of each.
+8)	Create a deployment with particular labels.
+9)	Count the number of nodes with given labels and redirect the count in each file.
+10)	Create a POD and this POD should only be created if there is an empty given file exist. In this question empty file supposed to be created by the initContainer first and then main container will be executed. 
+11)	Sort all the PV in the order of capacity (use –sort-by and jsonpath)
+12)	Create a POD with given version of NGINX image let say 1.28 and once create upgrade the image to higher version, make sure version was upgraded and then UNDO the rollout again. To make sure you need to check “rollout history” and “rollout undo”
+13)	There was a troubleshooting question where port for Api-server was wrong, it is supposed to be 6443 so by changing the port. It worked.
+14)	Create a deployment with 6 replicas and then upgrade to 20 replicas
+15)	Create a PV, PVC and attach it to the POD.
+16)	There was question on configMap, reading parameter from the file
+17)	There was a question on creating secrets, and then attaching the secret to the POD at the given directory path. Use mountPath and volume with hostPath.
+18)	There was a question on getting a field (not able to remember). For that use jsonPath and get the exact field like (.items[*].metadata.)
+19)	There was a trouble shooting question where kubectl was not working. There was something missing in kubectl connection with kube-APISERVER. I could not find the answer because I was running out of time but you please check kubectl configuration for Kube-APISERVER.
+20)	Create a POD which is supposed to be scheduled on a particular node only. Use NodeSelector
+21)	There were some smaller questions on creating PODs, deployment with commands like ‘sleep 3600’ so please practice these scenarios.
+22)	List the pods with heighest CPU and memory usage and redirect output
+
